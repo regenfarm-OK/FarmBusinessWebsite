@@ -19,6 +19,7 @@ body {
 
 header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
   padding: 1.25rem 1.5rem;
@@ -26,7 +27,7 @@ header {
   background: #fff;
 }
 
-header img { width: 40px; height: 40px; }
+header img { width: 40px; height: 40px; flex-shrink: 0; }
 
 header .site-name {
   font-weight: 700;
@@ -39,6 +40,7 @@ nav {
   margin-left: auto;
   display: flex;
   gap: 1.25rem;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -46,9 +48,25 @@ nav a {
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
+  padding: 0.25rem 0;
 }
 
 nav a:hover { color: var(--barn-red); }
+
+@media (max-width: 480px) {
+  header { padding: 1rem; }
+  header .site-name { font-size: 1rem; }
+  nav {
+    margin-left: 0;
+    width: 100%;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  main { padding: 1.75rem 1.25rem 3rem; }
+  h1 { font-size: 1.6rem; }
+  .tagline { font-size: 1rem; }
+  .btn { display: block; text-align: center; }
+}
 
 main {
   max-width: 780px;
